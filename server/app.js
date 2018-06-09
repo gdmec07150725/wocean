@@ -33,17 +33,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
 //使用express-session中间件,最好在cookieParser后面使用这个中间件
 app.use(session({
     secret:'wocean',
     cookie:{maxAge:120000}//定义session过期时间
 }));
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexs);
-app.use('/users', users);
-app.use('/login',login);
 
 app.use(flash());
 //定义视图助手处理中间件
@@ -61,6 +57,10 @@ app.use(function(err,req,res,next){
   res.send(500,err.message);
 });
 */
+
+app.use('/', indexs);
+app.use('/users', users);
+app.use('/login',login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

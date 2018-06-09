@@ -12,7 +12,7 @@ var domains = require('../errorHandle/domain');
 router.get('/',function(req,res,next){
     //定向到login页面
     /*console.log('这是登陆界面');*/
-    res.render('login',{title:'登陆界面',error:''});
+    res.render('login',{title:'登陆界面'});
 
 });
 router.post('/',function(req,res,next){
@@ -38,7 +38,7 @@ router.post('/',function(req,res,next){
                      people.searchUser(user,function(user){
                             //查询失败,重定向到登陆页
                             if(!user){
-                                /*req.flash('error','用户名或密码错误');*/
+                                req.flash('error','用户名或密码错误');
                                 return res.redirect('/login');
                             }else{
                             //验证成功,定向到后台首页
@@ -47,7 +47,8 @@ router.post('/',function(req,res,next){
                                 //用session保存当前用户的username
                                 req.session.username = user[0].username;
                                 console.log(req.session.username);
-                               res.render('indexs',{title:'首页',user:req.session.username});
+                                res.redirect('/');
+                              /* res.render('indexs',{title:'首页',user:req.session.username});*/
                          }
                      });
     }

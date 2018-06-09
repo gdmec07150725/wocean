@@ -12,7 +12,7 @@ var userSchema = new Schema({
             require:true
         }
 });
-    //连接myDatabase数据库,Mongoose>=4.0要输入第二个参数useMongoClient.不然会报过时的警告
+//连接myDatabase数据库,Mongoose>=4.0要输入第二个参数useMongoClient.不然会报过时的警告
 mongoose.connect('mongodb://localhost:27017/wocean',{useMongoClient:true},function(err){
         if(err) throw(err);
         else{

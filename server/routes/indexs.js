@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 function checkLogind (req,res,next){
    //check login
   if(req.session.username){
-    next();
+    return next();
   }else{
     return res.redirect('/login');
   }
