@@ -1,0 +1,118 @@
+body{
+     margin:0;
+     padding:0;
+     background:url('/images/loginimages.png') fixed;
+     -webkit-background-size: cover;/*IE8及以下版本不支持该属性*/
+     -moz-background-size: cover;
+ }
+/*白色吊带样式*/
+div[id='camisole']{
+    position: relative;
+    width:52px;
+    height:167px;
+    margin:0 auto;
+    background-color: #fff;
+}
+/*报错信息样式*/
+div[id='error-message']{
+    position: absolute;
+    width: 130px;
+    height:22px;
+    top:142%;
+    left:-75%;
+    color:  #FF0000;
+}
+/*透明背景样式*/
+div[id='transparent']{
+    position:absolute;
+    width:800px;
+    height:600px;
+    left:-725%;
+    background: url(/images/transparent.png) no-repeat;
+}
+/*定义login字体样式*/
+span[class='login']{
+    position:absolute;
+    height:25px;
+    top:125%;
+    left: -7%;
+    line-height:25px;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+}
+/*定义username输入框的容器样式*/
+div[class='div-username']{
+    position:absolute;
+    top:160%;
+    left:-222%;
+}
+/*定义password输入框的容器样式*/
+div[class='div-password']{
+    position: absolute;
+    top:195%;
+    left:-222%;
+}
+/*定义按钮容器样式*/
+div[class='div-button']{
+    position:absolute;
+    top:230%;
+    left:-222%;
+}
+
+/*定义username输入框小图标的样式*/
+i[class='icon-username']{
+    position: absolute;
+    z-index:5;
+    top:25%;
+    left:2%;
+    background:url(/images/people.png) no-repeat ;
+    width: 21px;
+    height: 23px;
+}
+/*定义password输入框小图标的样式*/
+i[class='icon-password']{
+    position: absolute;
+    z-index: 5;
+    top: 25%;
+    left:2%;
+    background:url(/images/password.png) no-repeat ;
+    width: 21px;
+    height: 23px;
+}
+/*清除浏览器自带的输入框点击后的样式*/
+input:focus{
+    outline:none;
+}
+/*定义username和password输入框的样式*/
+input[class='username'],[class='password']{
+    width: 250px;
+    height: 40px;
+    border:1px solid #BEBEBE;
+    /* For Firefox3.6+ */
+    box-shadow: 0px 1px 0px 0px #999 inset,   /*上边阴影*/
+                1px 0px 0px 0px #999 inset,   /*左边阴影*/
+                -1px 0px 0px 0px #999 inset,    /*右边阴影*/
+                0px -1px 0px 0px #999 inset;    /*下边阴影*/
+    -moz-border-radius:5px;
+    -webkit-border-radius: 5px;
+    padding-left: 30px;
+    background: rgba(0,0,0,0.5);/*设置透明黑色背景*/
+    color: #fff;
+    font-size:18px;
+}
+/*定义按钮的样式*/
+input[class='submit-button']{
+    /*由于input的type不同，定义相同的宽度，显示的效果也不一样,所以如果想让按钮输入框的宽度和username的相同，就不能写250px而应该更大*/
+    width: 282px;
+    height: 40px;
+    border: none;
+    background-color: #91C46C;
+    -moz-border-radius:5px;
+    -webkit-border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+

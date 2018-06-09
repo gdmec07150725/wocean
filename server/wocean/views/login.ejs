@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/login.css"/>
+    <script src="/javascripts/text.js"></script>
+</head>
+<body>
+
+<!--白色吊带-->
+<div id="camisole">
+    <!--错误信息显示-->
+    <div id="error-message">
+        <% if(error){ %>
+        <%= error %>
+        <%}%>
+    </div>
+    <!--透明输入框背景-->
+    <div id="transparent"></div>
+    <!--登录字体-->
+    <span class="login">LOGIN</span>
+    <!--用户名输入框-->
+    <form class="form-horizontal" method="post">
+        <div class="div-username">
+            <i class="icon-username"></i>
+            <input type="text" class="username" name="username" required  placeholder="Username"/>
+        </div>
+        <div class="div-password">
+            <i class="icon-password"></i>
+            <input type="password" class="password" name="password" required  placeholder="Password"/>
+        </div>
+        <div class="div-button">
+            <input type="submit" class="submit-button" value="Sign In">
+        </div>
+    </form>
+</div>
+</body>
+</html>
