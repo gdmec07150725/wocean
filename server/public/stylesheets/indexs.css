@@ -86,7 +86,7 @@
   top:70px;
   bottom:50px;
   width: 100%;
-  background-color: #FF6A6A;
+  /*background-color: #FF6A6A;*/
 }
 #content #content-left{
   position: absolute;
@@ -94,15 +94,60 @@
   height: 100%;
   left:0;
   top:0;
-  background-color: rgba(0,0,0,.7);
+  background-color: #2A323F;
+  color: #fff;
 }
+/*左侧导航菜单样式*/
+#content #content-left #parentUL{
+  width:100%;
+  /*border:1px solid #FFA500;*/
+}
+#content #content-left #parentUL .childUL{
+   height:0;
+   overflow: hidden;
+ }
+#content #content-left #parentUL .parentLI{
+  width:100%;
+  border-bottom:2px solid #06D994;
+  text-align: center;
+  position: relative;
+  top:50%;
+}
+#content #content-left #parentUL .parentLI>a{
+  display:block;
+  width:100%;
+  height: 40px;
+  /*background-color: #FF6A6A;*/
+  text-decoration:none;
+  line-height: 40px;
+  color:#fff;
+}
+#content #content-left #parentUL .parentLI>a:hover{
+  background-color: rgba(255,255,255,0.5);
+
+}
+#content #content-left #parentUL .childUL li{
+  width:100%;
+  list-style-type: none;
+}
+#content #content-left #parentUL .childUL li>a{
+  display: block;
+  width: 100%;
+  height: 25px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 25px;
+}
+#content #content-left #parentUL .childUL li>a:hover{
+  background-color: #06D994;
+}
+
 #content #content-right{
   position: absolute;
   left: 290px;
   right: 0;
   top:0;
   height: 100%;
-  background-color: #FFA500;
 }
 #footer{
   position:absolute;
@@ -110,5 +155,8 @@
   right:0;
   bottom:0;
   height: 50px;
-  background-color: rgba(0,0,0,.7);
+  background-color: #2A323F;
 }
+
+
+

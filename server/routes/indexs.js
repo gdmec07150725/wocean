@@ -6,7 +6,7 @@ var router = express.Router();
 /*router.get('/',checkLogind);*/
 router.get('/', function(req, res, next) {
  /* req.flash('success','登录成功');*/
-  res.render('indexs', { title: 'wocean后台管理系统' });
+  res.render('indexs', {model:''});
 });
 function checkLogind (req,res,next){
    //check login

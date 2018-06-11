@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= title %></title>
+    <title>OTTO后台管理系统</title>
     <link rel="stylesheet" href="/stylesheets/indexs.css" type="text/css">
+    <script src="/javascripts/indexs.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="header">
@@ -21,9 +22,55 @@
 </div>
 <div id="content">
     <div id="content-left">
-
+        <!--左侧导航下拉菜单-->
+        <ul id="parentUL">
+            <li class="parentLI" >
+                <a href="#" id="0">nav1</a>
+                <ul class="childUL">
+                    <li><a href="#">nav1-1</a></li>
+                    <li><a href="#">nav1-2</a></li>
+                    <li><a href="#">nav1-3</a></li>
+                </ul>
+            </li>
+            <li class="parentLI" >
+                <a href="#" id="1">nav2</a>
+                <ul class="childUL">
+                    <li><a href="#">nav2-1</a></li>
+                    <li><a href="#">nav2-2</a></li>
+                    <li><a href="#">nav2-3</a></li>
+                    <li><a href="#">nav2-4</a></li>
+                </ul>
+            </li>
+            <li class="parentLI" >
+                <a href="#" id="2">nav3</a>
+                <ul class="childUL">
+                    <li><a href="#">nav3-1</a></li>
+                    <li><a href="#">nav3-2</a></li>
+                    <li><a href="#">nav3-3</a></li>
+                </ul>
+            </li>
+            <li class="parentLI" >
+                <a href="#" id="3">nav4</a>
+                <ul class="childUL">
+                    <li><a href="#">nav4-1</a></li>
+                    <li><a href="#">nav4-2</a></li>
+                    <li><a href="#">nav4-3</a></li>
+                </ul>
+            </li>
+            <li class="parentLI" >
+                <a href="#" id="4">用户中心</a>
+                <ul class="childUL">
+                    <li><a href="/users/admin">管理员信息</a></li>
+                    <li><a href="#">nav5-2</a></li>
+                    <li><a href="#">nav5-3</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <div id="content-right">
+        <%if(model){%>
+        <%- include(model) %>
+        <%}%>
     </div>
 </div>
 <div id="footer">
