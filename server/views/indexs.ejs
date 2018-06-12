@@ -7,6 +7,7 @@
     <script src="/javascripts/indexs.js" type="text/javascript"></script>
 </head>
 <body>
+
 <div id="header">
     <div class="header-content">
         <div class="header-content-left">
@@ -25,9 +26,9 @@
         <!--左侧导航下拉菜单-->
         <ul id="parentUL">
             <li class="parentLI" >
-                <a href="#" id="0">nav1</a>
+                <a href="#" id="0">商品管理</a>
                 <ul class="childUL">
-                    <li><a href="#">nav1-1</a></li>
+                    <li><a href="#" data-url="/store" id="url">商品列表</a></li>
                     <li><a href="#">nav1-2</a></li>
                     <li><a href="#">nav1-3</a></li>
                 </ul>
@@ -68,13 +69,11 @@
         </ul>
     </div>
     <div id="content-right">
-        <%if(model){%>
-        <%- include(model) %>
-        <%}%>
     </div>
 </div>
 <div id="footer">
 
 </div>
+
 </body>
 </html>

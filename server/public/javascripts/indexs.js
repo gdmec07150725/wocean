@@ -21,7 +21,25 @@ window.onload = function(){
         },
         getEvent : function(event){
             return event ? event : window.event;
+        },
+        getTarget:function(event){
+            return event.target || event.srcElement;
+        },
+        preventDefault : function(event){
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue  = false;
+            }
+        },
+        stopPropagation : function(event){
+            if(event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
         }
+
     };
     /*获取parentLI元素,由于IE8以下版本不支持getElementsByClassName,所以要做兼容性处理!*/
     var parentLI = document.getElementsByClassName('parentLI');
@@ -73,5 +91,42 @@ window.onload = function(){
     for(var i =0;i<parentLI.length;i++){
         EventUtil.addHandler(parentLI[i],"click",handle);
     }
+
+    //用ajax请求后端页面，实现局部刷新
+    function ajaxConstructionObject(method,url,data){
+       this.method = method;
+       this.url = url;
+       this.data = data;
+    }
+    ajaxConstructionObject.prototype.ajaxHtml = function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open(this.method,this.url,true);
+         xhr.onreadystatechange =  function (){
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    return xhr.responseText
+                }
+            }
+        };
+        xhr.send(this.data);
+    };
+        //为childUL中的每一条链接添加事件处理函数;
+         var childUL = document.getElementsByClassName('childUL');
+         for(var j = 0;j<childUL.length;j++){
+             childUL[j].onclick= function(event){
+                 //获取当前点击的a标签的链接,然后传给ajax的请求函数
+                 event = EventUtil.getEvent(event);
+                 console.log(EventUtil.getTarget(event));
+                 var elementTarget = EventUtil.getTarget(event);
+                 if(elementTarget.dataset.url){
+                     var response = new ajaxConstructionObject('GET',elementTarget.dataset.url,null).ajaxHtml();
+                     console.log(response);
+                 }
+                 /*阻止事件冒泡*/
+                 EventUtil.stopPropagation(event);
+                 /*释放内存*/
+                 childUL = null;
+             };
+         }
 
 };

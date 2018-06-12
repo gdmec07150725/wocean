@@ -7,6 +7,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
+var partials = require('express-partials');
+
 
 /*//因为4.x中的flash不再和express捆绑在一起了，所以必须单独安装，再引入进来
 var flash = require('connect-flash');*/
@@ -17,6 +19,7 @@ var indexs = require('./routes/indexs');
 var users = require('./routes/users');
 //引入登陆js文件
 var login = require('./routes/login');
+/*var store = require('./routes/store');*/
 
 
 var app = express();
@@ -24,8 +27,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-/*//使用partials模块
-app.use(partials());*/
+//使用partials模块
+app.use(partials());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -44,6 +47,7 @@ app.use(session({
 app.use(flash());
 //定义视图助手处理中间件
 app.use(function(req,res,next){
+    res.locals.users = req.session.username;
     var error = req.flash ('error');
     res.locals.error = error.length ? error : null;
     var success = req.flash('success');
@@ -61,6 +65,7 @@ app.use(function(err,req,res,next){
 app.use('/', indexs);
 app.use('/users', users);
 app.use('/login',login);
+/*app.use('/store',store);*/
 
 
 // catch 404 and forward to error handler

@@ -12,7 +12,7 @@ var domains = require('../errorHandle/domain');
 router.get('/',function(req,res,next){
     //定向到login页面
     /*console.log('这是登陆界面');*/
-    res.render('login',{title:'登陆界面'});
+    res.render('login',{title:'登陆界面',users:''});
 
 });
 router.post('/',function(req,res,next){
