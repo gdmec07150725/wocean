@@ -5,6 +5,7 @@
     <title>OTTO后台管理系统</title>
     <link rel="stylesheet" href="/stylesheets/indexs.css" type="text/css">
     <script src="/javascripts/indexs.js" type="text/javascript"></script>
+    <script src="/javascripts/publicAjaxRequest.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
             <li class="parentLI" >
                 <a href="#" id="0">商品管理</a>
                 <ul class="childUL">
-                    <li><a href="#" data-url="/store" id="url">商品列表</a></li>
+                    <li><a href="#" data-url="/store">商品列表</a></li>
                     <li><a href="#">nav1-2</a></li>
                     <li><a href="#">nav1-3</a></li>
                 </ul>
@@ -61,8 +62,8 @@
             <li class="parentLI" >
                 <a href="#" id="4">用户中心</a>
                 <ul class="childUL">
-                    <li><a href="/users/admin">管理员信息</a></li>
-                    <li><a href="#">nav5-2</a></li>
+                    <li><a href="#" data-url="/users">网站用户</a></li>
+                    <li><a href="#" data-url="/admins">后台管理员</a></li>
                     <li><a href="#">nav5-3</a></li>
                 </ul>
             </li>

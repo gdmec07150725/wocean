@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style  rel="stylesheet" type="text/css">
+        #admins-content{
+            width:98%;
+            position:absolute;
+            top:4%;
+            left: 50%;
+            transform:translateX(-50%);
+            background-color: #fff;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        .admins-search{
+            width:100%;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #F2F2F2;]
+        }
+        .admins-search input{
+            width: 180px;
+            height: 40px;
+            border:1px solid #BEBEBE;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            margin: 0 40px 0 15px;
+            text-indent: 5px;
+        }
+       .admins-search .submit{
+            width: 90px;
+        }
+        .admins-search .submit:hover,.operating input:hover{
+            background-color: #06D994;
+            cursor:pointer;
+            border: 1px solid #F2F2F2;
+            color: #fff;
+        }
+        .operating input{
+            width: 90px;
+            height: 40px;
+            border:1px solid #BEBEBE;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            margin: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="admins-content">
+        <div class="admins-search">
+                <label for="loginName">登录名</label>
+                <input type="text" id="loginName" name="loginName" value="" placeholder="请输入"/>
+                <label for="phoneNumber">手机</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="" placeholder="请输入"/>
+                <label for="email">邮箱</label>
+                <input type="text" id="email" name="email" value="" placeholder="请输入"/>
+                <input type="submit" value="查找" class="submit"/>
+        </div>
+        <div class="operating">
+                <input type="button" value="删除" id="deleteAdmin">
+                <input type="button" value="添加" id="addAdmin">
+        </div>
+
+    </div>
+</body>
+</html>

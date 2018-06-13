@@ -19,7 +19,8 @@ var indexs = require('./routes/indexs');
 var users = require('./routes/users');
 //引入登陆js文件
 var login = require('./routes/login');
-/*var store = require('./routes/store');*/
+var store = require('./routes/store');
+var admins = require('./routes/admins');
 
 
 var app = express();
@@ -65,7 +66,8 @@ app.use(function(err,req,res,next){
 app.use('/', indexs);
 app.use('/users', users);
 app.use('/login',login);
-/*app.use('/store',store);*/
+app.use('/store',store);
+app.use('/admins',admins);
 
 
 // catch 404 and forward to error handler
